@@ -5,8 +5,7 @@ import Menue from './components/Menue';
 import ReactCardFlip from 'react-card-flip';
 
 function App() {
-  let {data,setData,index,setIndex,menue,setMenue}=useContext(myContext);
-  let[flip,setFlip]=useState(false);
+  let {data,setData,index,setIndex,menue,setMenue,flip,setFlip}=useContext(myContext);
   let menueClick=()=>{
     setMenue(!menue);
   }
@@ -37,8 +36,8 @@ menu
 </span>}
 <div className='flip-card'>
 <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
-  <div className='card front' onClick={()=>setFlip(!flip)}>{data[index].question}</div>
-  <div className='card back'onClick={()=>setFlip(!flip)}>{data[index].answer}</div>
+  <div className='card front' onClick={()=>setFlip(!flip)}><h3>question</h3>{data[index].question}</div>
+  <div className='card back'onClick={()=>setFlip(!flip)}><h3>answer</h3>{data[index].answer}</div>
 </ReactCardFlip>
 </div>
 </div>

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import MyContext from "../context/context";
 export default function ListItem({description,status,i}){
-let{setIndex,setMenue,index}=useContext(MyContext);  
+let{setIndex,setMenue,index,setFlip}=useContext(MyContext);  
 let  handleClick=()=>{
     setIndex(i);
     setMenue(false);
+    setFlip(false);
   }
 return <><div className={`item ${i===index&&"currentItem"}`} onClick={handleClick}>
 <h4>{i+1+"."}</h4>
