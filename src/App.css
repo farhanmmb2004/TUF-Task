@@ -3,7 +3,25 @@
   margin: 0 auto;
   text-align: center;
 }
-.container{
+.kalam-light {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kalam-bold {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.container {
   display: flex;
   justify-content: center;
 }
@@ -15,10 +33,26 @@
   left: 15px;
   cursor: pointer;
 }
+.current{
+  font-size: 30px;
+}
 .card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: kalam;
+  font-size: 30px;
   height: 450px;
   background-color: bisque;
 
+}
+.pre-button {
+  background-color: brown;
+  margin-right: 150px;
+  margin-top: 5px;
+}
+.next-button{
+  background-color: brown;
 }
 @media (max-width: 500px) {
   .flip-card{
