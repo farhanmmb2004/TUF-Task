@@ -4,7 +4,10 @@ import MyContext from "../context/context";
 import { useContext } from "react";
 import ListItem from "./ListItem";
 export default function Menue({visibility,setVisibility}){
-    let{data}=useContext(MyContext);
+    let{data,setForm}=useContext(MyContext);
+    let handleFormClick=()=>{
+        setForm(true);
+    }
 return(
     <div className={`menue menue-${visibility?"visible":"hidden"}`}>
         list of questions
@@ -12,7 +15,18 @@ return(
 close
 </span>}
 <br />
-{data.map((item,index)=><ListItem description={data[index].description} status={data[index].status} i={index} key={index}/>)}
+{data.map((item, index) => {
+  return (
+    <ListItem 
+      description={item.description} 
+      status={item.status} 
+      i={index} 
+      key={index} 
+    />
+  );
+})}
+
+<button className="add-more" onClick={handleFormClick}>add question</button>
 </div>
 );
 }

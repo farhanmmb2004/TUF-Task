@@ -36,8 +36,10 @@ export const ContextProvider = ({ children }) => {
   let[index,setIndex]=useState(0);
   let[menue,setMenue]=useState(false);
   let[flip,setFlip]=useState(false);
+  let[form,setForm]=useState(false);
+  let[edit,setEdit]=useState(false);
   return (
-    <MyContext.Provider value={{data,setData,index,setIndex,menue,setMenue,flip,setFlip}}>
+    <MyContext.Provider value={{edit,setEdit,form,setForm,data,setData,index,setIndex,menue,setMenue,flip,setFlip}}>
       {children}
     </MyContext.Provider>
   );

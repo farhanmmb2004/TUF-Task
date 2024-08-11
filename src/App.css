@@ -70,6 +70,13 @@
   align-items: center;
   justify-content: center;
 }
+.edit{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.edit, .delete{
+  cursor: pointer;
+}
 @media (max-width: 500px) {
   .flip-card{
     margin-top: 30px;
