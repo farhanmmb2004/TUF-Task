@@ -1,34 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useContext, useState } from 'react'
 import './App.css'
+import myContext from './context/context'
+import Menue from './components/Menue';
+import ReactCardFlip from 'react-card-flip';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  let {data}=useContext(myContext);
+  let[menue,setMenue]=useState(false);
+  let[flip,setFlip]=useState(false);
+  let menueClick=()=>{
+    setMenue(!menue);
+  }
+return (<>
+<div className='container'>
+  {<Menue visibility={menue} setVisibility={menueClick}/>}
+{!menue&&<span class="material-symbols-outlined menue-button" onClick={menueClick}>
+menu
+</span>}
+<div className='flip-card'>
+<ReactCardFlip isFlipped={flip} flipDirection="horizontal">
+  <div className='card front' onClick={()=>setFlip(!flip)}>hello</div>
+  <div className='card back'onClick={()=>setFlip(!flip)}>world</div>
+</ReactCardFlip>
+</div>
+</div>
+</>
   )
 }
 
