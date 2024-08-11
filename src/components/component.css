@@ -17,6 +17,7 @@
     left: -230px;
 }
 .close{
+    color: white;
     position: sticky;
     left:200px;
     top: 0px;
@@ -26,6 +27,7 @@
     display: flex;
     border-top: 2px solid black;
     cursor: pointer;
+    color: black;
 }
 .item span{
     position: absolute;
