@@ -48,7 +48,7 @@
 }
 .pre-button {
   background-color: brown;
-  margin-right: 150px;
+  margin-right: 50px;
   margin-top: 5px;
 }
 .next-button{
@@ -57,6 +57,12 @@
 .done{
   margin-left: 15px;
   font-size: 15px;
+}
+
+.container2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 500px) {
   .flip-card{
