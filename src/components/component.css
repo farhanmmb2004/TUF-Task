@@ -45,7 +45,6 @@
     top: 50px;
     filter: none;
     z-index: 999;
-    transition:  left 0.3s ease;
     color: aliceblue;
 }
 .form button{
@@ -71,3 +70,8 @@
 .item .option{
     margin-top: 20px;
 }
+@media (max-width: 500px) {
+    .form{
+        left: 5px;
+    }
+  }
