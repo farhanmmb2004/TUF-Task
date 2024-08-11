@@ -3,19 +3,34 @@
     left: 0%;
     top: 0%;
     height: 100vh;
-    width: 200px;
-    background-color: aqua;
+    width: 230px;
+    background-color: rgb(137, 218, 171);
     transition: left 0.3s ease;
     z-index: 100;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .menue-visible{
     left: 0;
 }
 .menue-hidden{
-    left: -200px;
+    left: -230px;
 }
 .close{
-    position: absolute;
-    right:0px;
+    position: sticky;
+    left:200px;
+    top: 0px;
     cursor: pointer;
+}
+.item{
+    display: flex;
+    border-top: 2px solid black;
+    cursor: pointer;
+}
+.item span{
+    position: absolute;
+    right: 0px;
+}
+.currentItem{
+    border: 3px solid rgba(20, 20, 167, 0.705) ;
 }

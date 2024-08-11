@@ -5,9 +5,7 @@ import Menue from './components/Menue';
 import ReactCardFlip from 'react-card-flip';
 
 function App() {
-  let {data}=useContext(myContext);
-  let[index,setIndex]=useState(0);
-  let[menue,setMenue]=useState(false);
+  let {data,setData,index,setIndex,menue,setMenue}=useContext(myContext);
   let[flip,setFlip]=useState(false);
   let menueClick=()=>{
     setMenue(!menue);
@@ -24,6 +22,13 @@ function App() {
     setFlip(false);
     }
   }
+  let handleDone=()=>{
+    setData(data.map((item,i)=>i===index?{description:data[i].description,
+      question:data[i].question,
+      answer:data[i].answer,
+      status:!data[i].status
+    }:item));
+  }
 return (<>
 <div className='container'>
   {<Menue visibility={menue} setVisibility={menueClick}/>}
@@ -37,12 +42,11 @@ menu
 </ReactCardFlip>
 </div>
 </div>
-<div className='current'>{`${index+1}/${data.length}`}</div>
+<div className='current'>{`${index+1}/${data.length}` }<button className='done' onClick={handleDone}>{`mark ${!data[index].status?"done":"undone"}`}</button></div>
 <div className="conatiner2">
 <div className='navigation-button'>
-  <button className='pre-button' onClick={handlePre}>previous</button>
-
-  <button className='next-button'onClick={handleNext}>next</button>
+  <button className='pre-button' onClick={handlePre}>{"<- previous"}</button>
+  <button className='next-button'onClick={handleNext}>{"next ->"}</button>
 </div>
 </div>
 </>

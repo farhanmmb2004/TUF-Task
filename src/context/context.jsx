@@ -33,8 +33,10 @@ export const ContextProvider = ({ children }) => {
     { description: 'Who is Einstein? 🧠', question: 'Theoretical physicist who developed the theory of relativity 🔬', answer: 'Einstein 🧠', status: false },
     { description: 'What is DNA? 🧬', question: 'Molecule that carries genetic information in living beings 🧑‍🔬', answer: 'DNA 🧬', status: false },
   ]);
+  let[index,setIndex]=useState(0);
+  let[menue,setMenue]=useState(false);
   return (
-    <MyContext.Provider value={{data}}>
+    <MyContext.Provider value={{data,setData,index,setIndex,menue,setMenue}}>
       {children}
     </MyContext.Provider>
   );
